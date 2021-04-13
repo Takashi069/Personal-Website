@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #abe9cd;
+}
+
+lh {
+    font-family: 'Lobster', cursive;
+}
+
+li {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: beige;
+    text-decoration: none;
+}
+
+a:visited {
+    color: beige;
+    text-decoration: none;
+}
+
+.keep_centre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-bar {
+    position: fixed;
+    grid-area: header;
+    background-color: #343435;
+    color: bisque;
+    font-family: 'Lobster', cursive;
+    overflow: hidden;
+    opacity: 0.1;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-starts;
+    justify-content: space-around;
+    animation-name: limelight;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+}
+
+.nav-bar:hover {
+    animation-name: limelight1;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+.navh1 {
+    margin-top: 5%;
+}
+
+.navh1:hover {
+    border-radius: 10%;
+    animation: hovering 1s linear infinite;
+}
+
+.overlap {
+    display: block;
+    position: relative;
+}
+
+.My_Name {
+    position: relative;
+    background-color: #abe9cd;
+    background-image: linear-gradient(0deg, #f5f5f5, #abe9cd 0%, #3eadcf 50%);
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-end;
+}
+
+.Achievements {
+    position: relative;
+    background-color: #abe9cd;
+    background-image: linear-gradient(180deg, #abe9cd, #abe9ae, #abe9cd);
+    box-shadow: -1px -10px 20px #abe9cd;
+    height: 750px;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.Achievements_Content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    padding-top: 10%;
+}
+
+.trophy_icon {
+    position: relative;
+    height: 240px;
+    color: #d67400;
+}
+
+.Headings {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10%;
+    font-family: 'Lobster', cursive;
+    font-size: 4em;
+    color: #f8f8ff;
+    text-shadow: 20px 2px 5px #3eadcf;
+}
+
+.Skill-Set {
+    position: relative;
+    background-color: #abe9cd;
+    background-image: linear-gradient(180deg, #abe9cd 26%, #3eadcf 74%);
+    box-shadow: 0px 0px 0px #abe9cd;
+    margin-top: 100px;
+    height: 650px;
+    width: 100%;
+}
+
+.About_Me {
+    position: relative;
+    background-color: #abe9cd;
+    background-image: linear-gradient(0deg, #abe9cd 26%, #3eadcf 74%);
+    border-bottom-left-radius: 5px;
+    margin-top: -10.1%;
+    height: 750px;
+    width: 100%;
+}
+
+.spacing {
+    padding: 12px;
+}
+
+#Name {
+    position: relative;
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
+    color: aliceblue;
+    text-shadow: 20px 2px 5px aquamarine;
+}
+
+#My_Photo_IMG {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    box-shadow: 2px 0px 25px 10px aquamarine;
+}
+
+#Non-Academic {
+    position: relative;
+    background-color: #3eadcf;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    width: 30%;
+    height: 400px;
+    padding-top: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    box-shadow: -10px 1px 20px #f5f5f5;
+}
+
+#Academic {
+    position: relative;
+    background-color: #3eadcf;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    width: 30%;
+    height: 400px;
+    padding-top: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    box-shadow: 10px 1px 20px #f5f5f5;
+}
+
+#Skills_Title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#Skill-icon {
+    height: 150px;
+    width: 150px;
+    margin-left: 5%;
+}
+
+#Skill_content {
+    position: relative;
+    margin-left: 10%;
+    margin-top: 7%;
+    margin-bottom: 3%;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: 0px 1px 3px teal;
+}
+
+#Icon-Languages {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#Skill_content_footer {
+    position: relative;
+    margin-left: 10%;
+    margin-top: 5%;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: 0px 1px 3px teal;
+}
+
+#About_Me {
+    position: relative;
+    text-shadow: 5px 7px 5px teal;
+}
+
+#About_Me_Content {
+    position: relative;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: 0px 1px 3px teal;
+}
+
+#About_Me_Alignment {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#footer {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+/*media queries*/
+
+@media screen and (max-width:600px) {
+    li {
+        font-size: 15px;
+        padding: 5px;
+    }
+    p {
+        font-size: 10px;
+    }
+    .nav-bar {
+        height: 15%;
+        flex-direction: column;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        font-size: 12px;
+    }
+    .Headings {
+        font-size: 3em;
+    }
+    .My_Name {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+    .Achievements_Content {
+        flex-direction: column;
+    }
+    .trophy_icon {
+        height: 240px;
+        width: 240px;
+        margin: auto;
+    }
+    .Skill-Set {
+        height: 350px;
+    }
+    #Name {
+        font-size: 30px;
+        padding-right: 20px;
+    }
+    #My_Photo_IMG {
+        height: 125px;
+        width: 125px;
+    }
+    #Non-Academic {
+        margin: 2%;
+        width: 92%;
+        height: 200px;
+    }
+    #Academic {
+        margin: 2%;
+        width: 92%;
+        height: 200px;
+    }
+    #Skill-icon {
+        display: none;
+    }
+    #C-Lang {
+        height: 50px;
+        width: 50px;
+    }
+    #HTML5 {
+        height: 50px;
+        width: 50px;
+    }
+    #CSS3 {
+        height: 50px;
+        width: 50px;
+    }
+    #Python {
+        height: 50px;
+        width: 50px;
+    }
+    #Skill_content {
+        font-size: 21px;
+        margin-left: 20px;
+    }
+    #Skill_content_footer {
+        font-size: 21px;
+        margin-left: 20px;
+    }
+    #About_Me {
+        height: 100px;
+    }
+    #About_Me_Content {
+        font-size: 18px;
+    }
+    #Airplane {
+        margin-top: 20%;
+        height: 150px;
+        width: 150px;
+    }
+    #Final_line {
+        font-size: 8px;
+    }
+}
+
+
+/*Animations are defined here */
+
+@keyframes hovering {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*This is to add that smooth trasparent transistion*/
+
+@keyframes limelight {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes limelight1 {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
