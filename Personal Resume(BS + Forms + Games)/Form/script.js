@@ -1,6 +1,5 @@
 function Submity() {
     console.log("Check1");
-
     var form = document.getElementById("Job_Details");
     form.style.display = "none";
     var Message = document.getElementById("Outer_Casing");

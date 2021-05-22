@@ -17,7 +17,7 @@
 
 <body>
     <div id="Outer_Casing">
-        <form id="Job_Details">
+        <form id="Job_Details" onsubmit="Submity()">
             <div id="Title">Job<br>Details</div>
             <fieldset>
                 <label name="Name" id="Name">Name</label>
@@ -45,7 +45,7 @@
                 <input type="number" for="Payment">
             </fieldset>
             <fieldset id="Submissions">
-                <button type="button" id="Submit" onclick="Submity()">Submit</button>
+                <button type="submit" id="Submit">Submit</button>
                 <button type="reset" id="Reset">Reset</button>
             </fieldset>
         </form>
