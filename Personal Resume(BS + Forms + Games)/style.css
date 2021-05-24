@@ -1,0 +1,44 @@
+nav {
+    color: white;
+    font-family: cursive;
+}
+
+h1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.blue-color-styling {
+    color: teal;
+    text-shadow: 3px 1px 10px blue;
+}
+
+.background-sky {
+    background-image: url("coverimage.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.background-cloudsonly {
+    background-image: url("Cloudsonly.png");
+    background-repeat: no-repeat;
+}
+
+.bg-transparent {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.bg-blue {
+    background-color: #5ca0f2;
+}
+
+#DP {
+    width: 400px;
+    height: 400px;
+}
+
+@media (max-width:650px) {
+    #DP {
+        width: 200px;
+        height: 200px;
+    }
+}

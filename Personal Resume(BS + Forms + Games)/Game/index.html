@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <script src="game.js"></script>
+</head>
+
+<body>
+    <div class="Memory_Board">
+        <a href="../index.html">
+            <button id="Home">Home Page</button>
+        </a>
+        <div id="Color_Green">
+            <div id="Display_Numbers">
+                Number Sequence Will Appear Here
+            </div>
+        </div>
+        <input type="number" id="Input" value="0"></input>
+        <div class="Controls">
+            <button id="Submit" onclick="FinalVerdict(arr)" disabled>Submit Answer</button>
+            <button id="Play" onclick="DisplayNumbers()">Play</button>
+            <button id="Reset" type="reset" onclick="Reset()">Reset</button>
+            <div id="Points">Points<br>0</div>
+        </div>
+    </div>
+</body>
+
+</html>

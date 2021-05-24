@@ -1,0 +1,161 @@
+body {
+    background-color: #7ee8fa;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+button:active {
+    transform: translateX(2px);
+}
+
+button:disabled {
+    color: black;
+    opacity: 0.6;
+    cursor: default;
+}
+
+.Memory_Board {
+    position: absolute;
+    height: 500px;
+    width: 75%;
+    margin-top: 5%;
+    margin-left: 12%;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+#Home {
+    margin-left: 5%;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    background-color: teal;
+}
+
+#Color_Green {
+    background-color: #006400;
+    border-radius: 10px;
+    height: 100px;
+    width: 90%;
+    box-shadow: 5px 7px 10px yellowgreen;
+    opacity: 0.7;
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+#Input {
+    background-color: #52a7c1;
+    border-radius: 10px;
+    height: 100px;
+    width: 90%;
+    box-shadow: 5px 7px 10px yellowgreen;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    align-self: center;
+}
+
+.Controls {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#Submit {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: #00693e;
+    box-shadow: 5px 7px 10px green;
+    position: relative;
+}
+
+#Play {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: #00693e;
+    box-shadow: 5px 7px 10px green;
+    position: relative;
+}
+
+#Points {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px grey;
+    padding: 20px;
+    background-color: #52a7c1;
+    background-image: linear-gradient(0deg, #52a7c1 0%, #b3f6d8 74%);
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#Reset {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+    height: 100px;
+    width: 100px;
+    border-radius: 25px;
+    background-color: #00693e;
+    box-shadow: 5px 7px 10px green;
+    position: relative;
+}
+
+@media (max-width: 700px) {
+    .Memory_Board {
+        margin: 0px;
+        height: 97%;
+        width: 95%;
+    }
+    #Color_Green {
+        font-size: 1.5rem;
+        padding: 5px;
+    }
+    #Submit {
+        height: 80px;
+        width: 80px;
+    }
+    #Play {
+        height: 80px;
+        width: 80px;
+    }
+    #Reset {
+        height: 80px;
+        width: 80px;
+    }
+    #Points {
+        height: 80px;
+        width: 80px;
+        padding: 0;
+        font-size: 1.2rem;
+    }
+}
