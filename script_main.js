@@ -49,7 +49,7 @@ function EnterDetails()
             alert("Seems like you have entered a name > 10 characters, Please enter another username less than 10 characters");
     }
     if(username != "" && username!=null){
-        alert("The website will remeber you for 7 days hours from now. Visit within 7 days to extend the validity of your Visit");
+        alert("The website will remeber you for 7 days from now. Visit within 7 days to extend the validity of your Visit");
         let date = new Date();
         AssignCookies("username",username,date);
         //now I have to replace the New User with a custom Hello User message
