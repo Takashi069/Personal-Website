@@ -1,7 +1,109 @@
 var arr = " ";
 var finalscore = 0;
+var highscore = 0;
+var SignInChk = 0;
+
+
+//This function resets all the points and the text message displayed
+function Reset() {
+    var x = document.getElementById("Color_Green");
+    var y = document.getElementById("Display_Numbers");
+    document.getElementById("Submit").disabled = true;
+    document.getElementById("Play").disabled = false;
+    var points = document.getElementById("Points");
+    var input = document.getElementById("Input");
+    input.value = 0;
+    points.innerText = "Points\n" + 0;
+    finalscore = 0;
+    x.style.backgroundColor = "#006400";
+    y.innerText = "Number Sequence Will Appear Here";
+    let date = new Date();
+    if(SignInChk!=0){
+        AssignCookies("highscore",0,date);
+        highscore = 0;
+        UpdateHighScore(highscore);
+    }
+}
+
+//This function updates the High Score board
+function UpdateHighScore(highscore)
+{
+    var DispHighScore = document.getElementById("HighScore");
+    if(SignInChk==0){
+        DispHighScore.style.fontSize = "15px";
+        DispHighScore.innerHTML = "Warning User Not Signed In. High Score will not be saved";
+        SignInChk = 0;
+    }else{
+    DispHighScore.innerHTML = "High Score: " + highscore;
+    }
+}
+//This function assigns the highscore cookie
+function AssignCookies(cname,cvalue,date){
+
+    date.setDate(date.getDate() + 7);
+    document.cookie = cname + "="+cvalue+";expires="+date;
+    //The reason for the code below is that if I want to use the same date variable anywhere else
+    //the date would be the date I had assigned earlier which would be 1 week in the future
+    date.setDate(date.getDate() - 7);
+}
+//This function checks the highscore and updates the cookie
+function Highscore(points,highscore){
+    if(SignInChk!=0){
+
+    let date = new Date();
+    AssignCookies("highscore",highscore,date);
+    var cookie = document.cookie;
+    let highscoreLoc = cookie.search("highscore=");
+    highscoreLoc = highscoreLoc + 10;
+    highscore = (cookie.slice(highscoreLoc,12));
+    if(highscore.search(";")==true)
+    {
+        highscore = Number(cookie.slice(highscoreLoc,11));
+    }else{
+        highscore = Number(cookie.slice(highscoreLoc,12));
+    }
+    if (highscore<points)
+    {
+        highscore = points;
+        date = new Date();
+        AssignCookies("highscore",highscore,date);
+        UpdateHighScore(highscore);
+    }
+    }
+}
+//This function checks if there is any cookie available and does the necessary action
+function CookieCheck(){
+    //There are a couple of bugs I noticed, So fair warning to the users in advance
+    alert("If you observe any abnormalities in the High Score, Please Click the Reset Button");
+    let cookie = document.cookie;
+    if (cookie.search("username")==-1)
+    {   
+        //If there is no Username the highscore cookie would be deleted
+        document.cookie = "highscore=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        UpdateHighScore("No User Sign-In Detected");
+    }else{
+        SignInChk = 1;
+        if(cookie.search("highscore")==-1)
+        {
+            let date = new Date();
+            AssignCookies("highscore",0,date);
+        }
+        let highscoreLoc = cookie.search("highscore=");
+        highscore = (cookie.slice(highscoreLoc,12));
+        highscoreLoc = highscoreLoc + 10;
+        if(highscore.search(";")!=-1)
+        {
+            highscore = Number(cookie.slice(highscoreLoc,11));
+        }else{
+            highscore = Number(cookie.slice(highscoreLoc,12));
+        }
+        UpdateHighScore(highscore);
+    }
+    
+}
 
 function DisplayNumbers() {
+
     var x = document.getElementById("Color_Green");
     var y = document.getElementById("Display_Numbers");
     x.style.backgroundColor = "#006400";
@@ -50,46 +152,34 @@ function FinalVerdict(arr) {
     document.getElementById("Submit").disabled = true;
     //the arr.replace(/ /g, ' ') will remove all instances of white space in the string 
     arr = arr.replace(/ /g, '');
-    console.log(arr + " This is the question");
 
     var user = document.getElementById("Input");
     var userAnswer = user.value;
-    console.log(userAnswer + " This is the answer the User has provided");
     //the code below is the condition that checks if the answer is right or wrong and awards points
     //the second else if also checks if the points are 0 so that we do not go into negative scoring
     if (userAnswer == arr) {
         finalscore++;
-        x.style.backgroundColor = "green";
-        y.innerHTML = "Right Answer! Click Play to Play Again";
-        points.innerText = "Points\n" + finalscore;
-        console.log(finalscore + " This is the current score the user has");
+        if(finalscore<=50){
+            x.style.backgroundColor = "green";
+            y.innerHTML = "Right Answer! Click Play to Play Again";
+            points.innerText = "Points\n" + finalscore;
+        }else{
+            x.style.backgroundColor = "green";
+            y.innerHTML = "Well Done, You're too good for this game. You've beaten me.";
+            points.innerText = "Points\n" + finalscore;
+        }
     } else if ((userAnswer != arr) && (finalscore != 0)) {
         finalscore--;
         x.style.backgroundColor = "maroon";
         y.innerHTML = "Wrong Answer! Click Play to Play Again";
         points.innerText = "Points\n" + finalscore;
-        console.log(finalscore + " This is the current score the user has");
     } else { //This is so that the message will get printed even if finalscore is 0
         x.style.backgroundColor = "maroon";
         y.innerHTML = "Wrong Answer! Click Play to Play Again";
     }
-    document.getElementById("Play").disabled = false;
+    if(finalscore<=50)
+        document.getElementById("Play").disabled = false;
+    Highscore(finalscore,highscore);
     user.value = 0; //This is to clear out the input text that has the previous answer
 }
 
-//This function resets all the points and the text message displayed
-function Reset() {
-    var x = document.getElementById("Color_Green");
-    var y = document.getElementById("Display_Numbers");
-    document.getElementById("Submit").disabled = true;
-    document.getElementById("Play").disabled = false;
-    var points = document.getElementById("Points");
-    var input = document.getElementById("Input");
-    input.value = 0;
-    points.innerText = "Points\n" + 0;
-    finalscore = 0;
-    x.style.backgroundColor = "#006400";
-    y.innerText = "Number Sequence Will Appear Here"
-
-
-}

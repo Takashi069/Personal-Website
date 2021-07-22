@@ -11,21 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <script src="jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="script_main.js"></script>
     <title>Akash's Resume (Revamped)</title>
     <link rel="icon" href="https://img.icons8.com/fluent/48/000000/cloud.png" type="image/x-icon">
 </head>
 
-<body>
+<body onload="UserDisplay()">
+    
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="https://img.icons8.com/fluent/48/000000/cloud.png "></a>
+            <span class="nav-link" id="messageUser" style="display: none;">Hello Akash</span>
+            <button onclick="EnterDetails()" class="btn btn-primary " type="button" id="NewUser">
+                New User
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
                     <li class="nav-item ">
-                        <a class="nav-link " aria-current="page " href="#Achievements ">Achievements</a>
+                        <a class="nav-link " aria-current="page " href="#Achievements">Achievements</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link " href="#Skills">Skills</a>
@@ -37,22 +43,26 @@
                         <a class="nav-link " href="#Contact">Contact Me</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="/Game/index.html">
+                        <a class="nav-link" href="./Game/index.html">
                             Bored? Let's play a game 
                             <img src="https://img.icons8.com/clouds/28/000000/controller.png" alt="game_pic"/>
                         </a>
+                    </li>
+                    <li>
+                        <button onclick="ForgetUser()" class="btn btn-primary" type="button" id="ForgetUser" style="display: none;">
+                            Forget Me
+                        </button>
                     </li>
                 </ul>
 
             </div>
         </div>
     </nav>
-
     <div class="p-5 text-center background-sky container-fluid">
         <h1 class="m-5">Akash Harikumar</h1>
         <img src="DP.jpg" class="rounded-circle " id="DP">
         <p class="lead">
-            <a href="/Form/forms.html" class="btn btn-lg btn-primary mt-5 fw-bold border-none rounded-pill ">Hire Me</a>
+            <a href="./Form/forms.html" class="btn btn-lg btn-primary mt-5 fw-bold border-none rounded-pill ">Hire Me</a>
         </p>
     </div>
 
@@ -136,7 +146,7 @@
             <div class = "d-flex flex-row justify-content-around bg-transparent">   
                 <img id="JSLogo" src="https://img.icons8.com/color/64/000000/javascript.png" alt="JS" style="height:64px;width:64px" />
                 <div class="progress align-self-center" style="width:150px">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 37%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 
             </div>    

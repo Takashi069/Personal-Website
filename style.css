@@ -1,10 +1,20 @@
+button{
+    cursor: pointer;
+}
+
 nav {
     color: white;
     font-family: cursive;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 h1 {
     font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.popup-consent-cookies{
+    position: absolute;
+    margin-top: 100px;
 }
 
 .blue-color-styling {

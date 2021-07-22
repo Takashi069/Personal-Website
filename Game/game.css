@@ -51,6 +51,16 @@ button:disabled {
     background-color: teal;
 }
 
+#HighScore {
+    margin-left: 5%;
+    padding: 5px;
+    width: 8rem;
+    border-radius: 5px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    background-color: teal;
+}
+
 #Color_Green {
     background-color: #006400;
     border-radius: 10px;

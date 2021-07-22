@@ -1,7 +1,9 @@
 body {
     background-color: #5ca0f2;
 }
-
+img{
+    cursor: pointer;
+}
 fieldset {
     display: flex;
     flex-direction: row;
@@ -18,6 +20,8 @@ input {
     height: 30px;
     width: 50%;
     text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
 }
 
 textarea {
@@ -50,7 +54,11 @@ button:active {
     background-color: #4595c9;
     font-family: 'Montserrat Alternates', sans-serif;
 }
-
+#PreInfo{
+    position: relative;
+    margin: auto;
+    font-family: 'Signika', sans-serif;
+}
 #Job_Details {
     position: relative;
     margin: auto;
@@ -79,7 +87,10 @@ button:active {
     height: 50px;
     border-radius: 30px;
 }
-
+#email{
+    display: flex;
+    align-self: center;
+}
 #Submissions {
     justify-content: space-around;
 }
@@ -121,10 +132,10 @@ button:active {
     #Outer_Casing {
         margin: 0;
         width: 100%;
-        height: 820px;
+        height: 1020px;
     }
     #Job_Details {
-        height: 790px;
+        height: 990px;
     }
     #Submissions {
         display: flex;

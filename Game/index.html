@@ -9,20 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
+    <script src="../script_main.js"></script>
     <script src="game.js"></script>
 </head>
 
-<body>
+<body onload="CookieCheck()">
     <div class="Memory_Board">
         <a href="../index.html">
             <button id="Home">Home Page</button>
         </a>
+        <div id="HighScore">High Score: </div>
         <div id="Color_Green">
             <div id="Display_Numbers" class="unselectable">
                 Number Sequence Will Appear Here
             </div>
         </div>
-        <input type="number" id="Input" value="0"></input>
+        <input type="number" id="Input" value="0" required></input>
         <div class="Controls">
             <button id="Submit" onclick="FinalVerdict(arr)" disabled>Submit Answer</button>
             <button id="Play" onclick="DisplayNumbers()">Play</button>

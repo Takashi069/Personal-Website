@@ -1,5 +1,31 @@
+function Focus()
+{
+    document.getElementById("Name_input").focus();
+}
+
+function Email(mail){
+    var domain = String(mail);
+    var emailID = document.getElementById("email_input");
+    emailID.value = "@"+domain.toLowerCase()+".com";
+}
+
+function CheckMail(){
+    var emailID = document.getElementById("email_input").value;
+    if (emailID!="")
+    {
+        var domainStart = emailID.search("@")+1;
+        var domainEnd = emailID.search(".com");
+        var email = emailID.slice(domainStart,domainEnd);
+        if(email=="gmail" || email=="yahoo" || email=="outlook")
+        {
+           ;
+        }else{
+            document.getElementById("email_input").value = "Please Choose among these";
+        }
+    }
+}
+
 function Submity() {
-    console.log("Check1");
     var form = document.getElementById("Job_Details");
     form.style.display = "none";
     var Message = document.getElementById("Outer_Casing");
@@ -14,7 +40,6 @@ function Submity() {
     MessageStyle.flexDirection = "column";
     MessageStyle.justifyContent = "center";
     Message.innerText = "Thank You for choosing me.\nI will contact you soon.\n\n\nYou will be redirected to the home page in 5 seconds";
-    console.log("Check2");
     setTimeout(function() {
         window.location.href = "../index.html";
     }, 5000);

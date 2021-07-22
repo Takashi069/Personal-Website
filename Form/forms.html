@@ -15,21 +15,27 @@
 
 </head>
 
-<body>
+<body onload="Focus()">
     <div id="Outer_Casing">
         <form id="Job_Details" onsubmit="Submity()">
             <div id="Title">Job<br>Details</div>
+            <div id="PreInfo">All entries except Job Description are required</div >
             <fieldset>
                 <label name="Name" id="Name">Name</label>
-                <input type="text" for="Name" value="John Doe" required>
+                <input type="text" for="Name" id="Name_input" minlength="3" placeholder="John Doe" required>
             </fieldset>
             <fieldset>
                 <label name="email" id="email">Email</label>
-                <input type="email" for="email" id="email_input" value="xxxxx@xyz.com" required>
+                <fieldset>
+                <img id="Gmail" onclick="Email( 'Gmail' )" src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail"/>
+                <img id="Outlook" onclick="Email('Outlook')" src="https://img.icons8.com/color/48/000000/ms-outlook.png" alt="Outlook"/>
+                <img id="Yahoo" onclick="Email('Yahoo')" src="https://img.icons8.com/color/48/000000/yahoo-mail-app.png" alt="Yahoo"/>
+                <input onblur="CheckMail()" type="email" for="email" id="email_input" placeholder="xxxxx@xyz.com" required>
+            </fieldset>
             </fieldset>
             <fieldset>
                 <label name="Job_Title" id="Job_Title">Job Title</label>
-                <input type="text" for="Job_Title" id="Job_Title_Input" value="Business Website">
+                <input type="text" for="Job_Title" id="Job_Title_Input" placeholder="Business Website" required>
             </fieldset>
             <fieldset>
                 <label name="Job_Description" id="Job_Description">Job Description</label>
@@ -38,11 +44,11 @@
             </fieldset>
             <fieldset>
                 <label name="Delivery" id="Delivery">To be Delivered in (Business Days):</label>
-                <input type="text" for="Delivery" value="7 Days">
+                <input type="number" for="Delivery" placeholder="Required Days" required>
             </fieldset>
             <fieldset>
                 <label name="Payment" id="Payment">Payment (In Rupees): </label>
-                <input type="number" for="Payment">
+                <input type="number" for="Payment" placeholder="Amount in Rupees">
             </fieldset>
             <fieldset id="Submissions">
                 <button type="submit" id="Submit">Submit</button>
