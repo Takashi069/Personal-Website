@@ -29,8 +29,9 @@ h1 {
 }
 
 .background-cloudsonly {
-    background-image: url("Cloudsonly.png");
+    background-image: url("Sky-Image.jpg");
     background-repeat: no-repeat;
+    background-position-x: 15%;
 }
 
 .bg-transparent {
@@ -50,5 +51,10 @@ h1 {
     #DP {
         width: 200px;
         height: 200px;
+    }
+    .background-cloudsonly{
+        background-image: url("Cloudsonly.png");
+        background-repeat: no-repeat;
+
     }
 }
