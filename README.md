@@ -4,6 +4,9 @@
 The current webpage is made using Bootstrap.
 
 It has a form and a game as well( Although the game is quite small and simple).
-The current website has a optimised for 1366x768 screen resolution. The wallpaper would be updated soon.
+The wallpaper has been changed to fit in the any screen resolution and the website now works on most if not for all screen resolution.
+The wallpapers also change for phone and other bigger screen resolution.
 
 The website is currently hosted [here](https://akashharikumar.netlify.app)
+
+
